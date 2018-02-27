@@ -1,1 +1,1 @@
-include ':demo', ':gesturelibrary'
+include ':gesturelibrary'
