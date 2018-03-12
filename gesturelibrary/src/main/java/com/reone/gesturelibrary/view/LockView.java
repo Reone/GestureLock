@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * 手势解锁
  */
-public class LockView extends View {
+public class LockView<T extends ProcessManager> extends View {
 
     //控件宽度
     private float width = 0;
@@ -80,7 +80,7 @@ public class LockView extends View {
     //连线边款
     private int mLineWidth = 8;
 
-    private ProcessManager processManager = new ProcessManager(this);
+    private T processManager;
 
     public LockView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -380,12 +380,9 @@ public class LockView extends View {
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        // 不可操作
-        if (processManager.getErrorNumber() <= 0) {
+        if(!processManager.onInputStart()){
             return false;
         }
-        processManager.setCorrect(true);
-        processManager.removeCallbacks();
         movingNoPoint = false;
         float ex = event.getX();
         float ey = event.getY();
@@ -432,7 +429,11 @@ public class LockView extends View {
      * 解锁图案绘制完成
      */
     private void actionFinish() {
-        processManager.actionFinish(sPoints);
+        ArrayList<Integer> points = new ArrayList<>();
+        for (Point point:sPoints) {
+            points.add(point.index);
+        }
+        processManager.onInputEnd(points);
     }
 
     /**
@@ -472,7 +473,7 @@ public class LockView extends View {
      */
     private void addPoint(Point point) {
         this.sPoints.add(point);
-        processManager.newPoint();
+        processManager.pointAttach(point.index);
 
     }
 
@@ -592,7 +593,12 @@ public class LockView extends View {
         this.isShow = isShow;
     }
 
-    public ProcessManager getProcessManager(){
+    public void setProcessManager(T processManager){
+        this.processManager = processManager;
+        processManager.setLockView(this);
+    }
+
+    public T getProcessManager(){
         return processManager;
     }
 }

@@ -1,6 +1,11 @@
 package com.reone.gesturelibrary.util;
 
 
+import android.content.Intent;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public final class Base64 {
 
     private static final int BASELENGTH = 128;
@@ -271,9 +276,9 @@ public final class Base64 {
      * @return
      * @param password
      */
-    public static String encryptionString(int[] password) {
+    public static String encryptionString(List<Integer> password) {
         StringBuilder sb = new StringBuilder();
-        for (int i : password) {
+        for (Integer i : password) {
             sb.append(i).append("");
         }
         return Base64.encode(sb.toString().getBytes());

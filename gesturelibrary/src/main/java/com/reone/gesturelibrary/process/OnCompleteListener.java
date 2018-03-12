@@ -1,5 +1,7 @@
 package com.reone.gesturelibrary.process;
 
+import java.util.List;
+
 /**
  * 事件监听
  *
@@ -14,7 +16,7 @@ public interface OnCompleteListener {
     /**
      * 画完了
      */
-    void onComplete(String password, int[] indexs);
+    void onComplete(String password, List<Integer> indexs);
 
     /**
      * 绘制错误
@@ -30,7 +32,7 @@ public interface OnCompleteListener {
     /**
      * 设置密码再次输入密码
      */
-    void onAgainInputPassword(int mode, String password, int[] indexs);
+    void onAgainInputPassword(int mode, String password, List<Integer> indexs);
 
 
     /**
