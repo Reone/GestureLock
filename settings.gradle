@@ -1,1 +1,1 @@
-include ':gesturelibrary'
+include ':gesturelibrary', ':simple'
