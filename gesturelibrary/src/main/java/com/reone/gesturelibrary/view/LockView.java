@@ -46,7 +46,7 @@ public class LockView<T extends ProcessManager> extends View {
     private boolean checking = false;
 
     //是否显示滑动方向 默认为显示
-    private boolean isShow = true;
+    private boolean isShow = false;
 
     //普通状态下圈的颜色
     private int mColorUpRing = 0xFF378FC9;

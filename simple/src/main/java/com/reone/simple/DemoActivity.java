@@ -9,6 +9,7 @@ import com.reone.gesturelibrary.view.LockView;
 
 /**
  * Created by wangxingsheng on 2018/2/28.
+ *
  */
 
 public class DemoActivity extends AppCompatActivity{
@@ -20,6 +21,7 @@ public class DemoActivity extends AppCompatActivity{
         lockView = findViewById(R.id.lockView);
         lockView.setProcessManager(new SimpleProcessManager());
         lockView.getProcessManager().setMode(SimpleProcessManager.SETTING_PASSWORD);
+        lockView.setShow(true);
 
         @SimpleProcessManager.ProcessMode
         int mode = lockView.getProcessManager().getMode();
