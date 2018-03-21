@@ -38,7 +38,7 @@ public abstract class ProcessManager {
      */
     public abstract void lockViewAttach();
 
-    public @NonNull LockView getLockView() {
+    protected @NonNull LockView getLockView() {
         return lockView;
     }
 

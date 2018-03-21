@@ -1,9 +1,10 @@
-package com.reone.gesturelibrary.process;
+package com.reone.simple;
 
 import android.os.Handler;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 
+import com.reone.gesturelibrary.process.ProcessManager;
 import com.reone.gesturelibrary.util.Base64;
 import com.reone.gesturelibrary.util.PasswordCache;
 import com.reone.gesturelibrary.util.VibratorUtil;
