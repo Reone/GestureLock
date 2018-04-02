@@ -1,4 +1,5 @@
 # GestureLock
+[![](https://jitpack.io/v/Reone/GestureLock.svg)](https://jitpack.io/#Reone/GestureLock)
 九宫格手势锁View，Android phone pattern lock screen
 
 参考 感谢: [jlertele/GestureLibray](https://github.com/jlertele/GestureLibray)
