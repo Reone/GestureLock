@@ -5,6 +5,8 @@
 
 参考 感谢: [jlertele/GestureLibray](https://github.com/jlertele/GestureLibray)
 
+![图例](https://static.oschina.net/uploads/img/201802/27181901_2mOT.png)
+
 - 引用
 ```
 allprojects {
@@ -19,9 +21,8 @@ dependencies {
 ```
 
 - 使用
-1.添加引用
-
-2.在布局中添加LockView
+1. 添加引用
+2. 在布局中添加LockView
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -46,11 +47,11 @@ dependencies {
         app:no_finger_stroke_width="3dp"/>
 </FrameLayout>
 ```
-3.创建逻辑管理类
+3. 创建逻辑管理类
 ```java
 	class SimpleProcessManager extends ProcessManager
 ```
-4.设置自定义管理类
+4. 设置自定义管理类
 ```java
 	lockView = findViewById(R.id.lockView);
 	lockView.setProcessManager(new SimpleProcessManager());
@@ -59,7 +60,7 @@ dependencies {
 ```java
 	LockView<SimpleProcessManager> lockView;
 ```
-5.使用自定义管理类方法
+5. 使用自定义管理类方法
 ```java
 	lockView.getProcessManager().setMode(SimpleProcessManager.SETTING_PASSWORD);
 ```
