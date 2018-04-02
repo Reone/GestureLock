@@ -380,7 +380,7 @@ public class LockView<T extends ProcessManager> extends View {
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if(!processManager.onInputStart()){
+        if(processManager!=null && !processManager.onInputStart()){
             return false;
         }
         movingNoPoint = false;
@@ -433,7 +433,9 @@ public class LockView<T extends ProcessManager> extends View {
         for (Point point:sPoints) {
             points.add(point.index);
         }
-        processManager.onInputEnd(points);
+        if(processManager!=null){
+            processManager.onInputEnd(points);
+        }
     }
 
     /**
@@ -473,7 +475,10 @@ public class LockView<T extends ProcessManager> extends View {
      */
     private void addPoint(Point point) {
         this.sPoints.add(point);
-        processManager.pointAttach(point.index);
+        if(processManager!=null){
+            processManager.pointAttach(point.index);
+        }
+
 
     }
 
