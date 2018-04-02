@@ -1,4 +1,4 @@
-package com.reone.simple;
+package com.reone.simple.manager;
 
 import java.util.List;
 

@@ -1,13 +1,13 @@
-package com.reone.simple;
+package com.reone.simple.manager;
 
 import android.os.Handler;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 
 import com.reone.gesturelibrary.process.ProcessManager;
-import com.reone.gesturelibrary.util.Base64;
-import com.reone.gesturelibrary.util.PasswordCache;
-import com.reone.gesturelibrary.util.VibratorUtil;
+import com.reone.simple.util.Base64;
+import com.reone.simple.util.PasswordCache;
+import com.reone.simple.util.VibratorUtil;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

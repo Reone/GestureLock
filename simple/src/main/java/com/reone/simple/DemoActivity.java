@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.reone.gesturelibrary.view.LockView;
+import com.reone.simple.manager.SimpleProcessManager;
 
 /**
  * Created by wangxingsheng on 2018/2/28.
@@ -20,19 +21,5 @@ public class DemoActivity extends AppCompatActivity{
         lockView = findViewById(R.id.lockView);
         lockView.setProcessManager(new SimpleProcessManager());
         lockView.getProcessManager().setMode(SimpleProcessManager.SETTING_PASSWORD);
-        lockView.setShow(true);
-
-        @SimpleProcessManager.ProcessMode
-        int mode = lockView.getProcessManager().getMode();
-        switch (mode) {
-            case SimpleProcessManager.CLEAR_PASSWORD:
-                break;
-            case SimpleProcessManager.EDIT_PASSWORD:
-                break;
-            case SimpleProcessManager.SETTING_PASSWORD:
-                break;
-            case SimpleProcessManager.VERIFY_PASSWORD:
-                break;
-        }
     }
 }

@@ -1,9 +1,6 @@
-package com.reone.gesturelibrary.util;
+package com.reone.simple.util;
 
 
-import android.content.Intent;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public final class Base64 {
