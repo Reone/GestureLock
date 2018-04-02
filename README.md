@@ -7,7 +7,7 @@
 
 - 引用
 ```
-    dependencies {
-	        compile 'com.github.Reone:GestureLock:1.0.2'
-	}
+dependencies {
+	implementation 'com.github.Reone:GestureLock:$version_code'
+}
 ```
