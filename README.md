@@ -5,10 +5,14 @@
 
 参考 感谢: [jlertele/GestureLibray](https://github.com/jlertele/GestureLibray)
 
-![图例](https://static.oschina.net/uploads/img/201802/27181901_2mOT.png)
-
 - 引用
 ```
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
 dependencies {
 	implementation 'com.github.Reone:GestureLock:$version_code'
 }
@@ -16,6 +20,7 @@ dependencies {
 
 - 使用
 1.添加引用
+
 2.在布局中添加LockView
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -59,5 +64,4 @@ dependencies {
 	lockView.getProcessManager().setMode(SimpleProcessManager.SETTING_PASSWORD);
 ```
 
-
-
+![图例](https://static.oschina.net/uploads/img/201802/27181901_2mOT.png)
