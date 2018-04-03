@@ -5,7 +5,55 @@
 
 参考 感谢: [jlertele/GestureLibray](https://github.com/jlertele/GestureLibray)
 
-- 引用
+- 这是一个九宫格解锁的库
+- 提供一个View -- LockView
+- 支持通过xml设置颜色，大小等等属性
+- 支持自定义图案，默认的有Style.NORMAL,Style.RECT，也可以完全自定义，demo中有例子
+- 提供LockView的逻辑管理接口，也就是View的事件监听 -- ProcessManager
+    通过这个接口你可以完成解锁的大部分需求,具体接口如下
+```java
+public abstract class ProcessManager {
+
+    private LockView lockView = null;
+
+    /**
+     * 开始输入
+     * @return true则允许输入，false不允许输入
+     */
+    public abstract boolean onInputStart();
+
+    /**
+     * 当一个新的点选中的时候调用
+     * @param point
+     */
+    public abstract void pointAttach(@NonNull Integer point);
+
+    /**
+     * 输入完成
+     * @param points
+     */
+    public abstract void onInputEnd(@NonNull List<Integer> points);
+
+    /**
+     * 某些变量的初始化需要用到lockView可以在这个方法中进行
+     */
+    public abstract void lockViewAttach();
+
+    protected @NonNull LockView getLockView() {
+        return lockView;
+    }
+
+    public void setLockView(@NonNull LockView lockView) {
+        this.lockView = lockView;
+        lockViewAttach();
+    }
+}
+```
+
+- 提供一个常用的逻辑管理类 -- SimpleProcessManager
+- 提供了一些小东西，Base64.java、PasswordCache.java、VibratorUtil
+
+### 引用
 ```
 allprojects {
 	repositories {
@@ -18,7 +66,7 @@ dependencies {
 }
 ```
 
-- 使用
+### 使用
 1. 添加引用
 2. 在布局中添加LockView
 ```xml
