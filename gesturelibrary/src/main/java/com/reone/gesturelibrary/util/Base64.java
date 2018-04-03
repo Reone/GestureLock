@@ -1,4 +1,4 @@
-package com.reone.simple.util;
+package com.reone.gesturelibrary.util;
 
 
 import java.util.List;

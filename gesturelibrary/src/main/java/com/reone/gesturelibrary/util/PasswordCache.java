@@ -1,4 +1,4 @@
-package com.reone.simple.util;
+package com.reone.gesturelibrary.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

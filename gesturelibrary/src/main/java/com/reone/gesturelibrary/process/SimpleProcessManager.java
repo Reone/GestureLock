@@ -1,13 +1,12 @@
-package com.reone.simple.manager;
+package com.reone.gesturelibrary.process;
 
 import android.os.Handler;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 
-import com.reone.gesturelibrary.process.ProcessManager;
-import com.reone.simple.util.Base64;
-import com.reone.simple.util.PasswordCache;
-import com.reone.simple.util.VibratorUtil;
+import com.reone.gesturelibrary.util.Base64;
+import com.reone.gesturelibrary.util.PasswordCache;
+import com.reone.gesturelibrary.util.VibratorUtil;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -293,6 +292,8 @@ public class SimpleProcessManager extends ProcessManager {
     //设置解锁模式
     public void setMode(@SimpleProcessManager.ProcessMode int mode) {
         this.mode = mode;
+        this.oldPassword = null;
+        this.showTimes = 0;
     }
 
     public int getMode() {

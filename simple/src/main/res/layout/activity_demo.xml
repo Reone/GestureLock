@@ -19,4 +19,16 @@
         app:line_width="3dp"
         app:stroke_width="3dp"
         app:no_finger_stroke_width="3dp"/>
+    <Button
+        android:id="@+id/clear"
+        android:layout_gravity="bottom|start"
+        android:layout_width="wrap_content"
+        android:text="清除密码"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/check"
+        android:layout_gravity="bottom|end"
+        android:layout_width="wrap_content"
+        android:text="验证密码"
+        android:layout_height="wrap_content" />
 </FrameLayout>
