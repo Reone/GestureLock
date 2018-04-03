@@ -76,6 +76,7 @@ public class DemoActivity extends AppCompatActivity{
                             @Override
                             public boolean drawCircle(Canvas canvas, RectF oval, Paint paint) {
                                 canvas.drawArc(oval,-135f,315f,false,paint);
+                                canvas.drawArc(oval,-165f,16f,false,paint);
                                 return true;
                             }
                         });

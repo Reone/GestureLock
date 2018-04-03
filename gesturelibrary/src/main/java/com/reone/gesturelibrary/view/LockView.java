@@ -327,8 +327,7 @@ public class LockView<T extends ProcessManager> extends View {
     private void drawCircle(Canvas canvas, Point p) {
         RectF oval = new RectF(p.x-mRadius,p.y-mRadius,p.x+mRadius,p.y+mRadius);
         if(style == null || !style.drawCircle(canvas,oval,mPaint)){
-            canvas.drawArc(oval,-135f,315f,false,mPaint);
-            canvas.drawArc(oval,-165f,16f,false,mPaint);
+            canvas.drawCircle(oval.centerX(),oval.centerY(),oval.width()/2,mPaint);
         }
     }
 
