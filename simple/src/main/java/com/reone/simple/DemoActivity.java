@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.reone.gesturelibrary.process.OnCompleteListener;
@@ -21,6 +22,7 @@ import java.util.List;
 public class DemoActivity extends AppCompatActivity{
     private LockView<SimpleProcessManager> lockView;
     private View clearBtn,checkBtn;
+    private RadioGroup styleRadio;
     private PasswordCache passwordCache;
 
     @Override
@@ -31,6 +33,7 @@ public class DemoActivity extends AppCompatActivity{
         lockView = findViewById(R.id.lockView);
         clearBtn = findViewById(R.id.clear);
         checkBtn = findViewById(R.id.check);
+        styleRadio = findViewById(R.id.style);
         initLockView();
         initBtn();
     }
@@ -47,6 +50,19 @@ public class DemoActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 loadStatu();
+            }
+        });
+        styleRadio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.style_normal:
+                        break;
+                    case R.id.style_rect:
+                        break;
+                    case R.id.style_customize:
+                        break;
+                }
             }
         });
     }

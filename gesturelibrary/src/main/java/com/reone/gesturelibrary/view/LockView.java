@@ -15,6 +15,7 @@ import android.view.View;
 import com.reone.gesturelibrary.R;
 import com.reone.gesturelibrary.process.ProcessManager;
 import com.reone.gesturelibrary.entity.Point;
+import com.reone.gesturelibrary.style.BaseStyle;
 import com.reone.gesturelibrary.util.LockUtil;
 
 import java.util.ArrayList;
@@ -81,6 +82,8 @@ public class LockView<T extends ProcessManager> extends View {
     private int mLineWidth = 8;
 
     private T processManager;
+
+    private BaseStyle style;
 
     public LockView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -605,5 +608,9 @@ public class LockView<T extends ProcessManager> extends View {
 
     public T getProcessManager(){
         return processManager;
+    }
+
+    public void setStyle(BaseStyle style) {
+        this.style = style;
     }
 }
