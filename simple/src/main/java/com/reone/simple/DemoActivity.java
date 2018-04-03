@@ -1,5 +1,8 @@
 package com.reone.simple;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +11,12 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.reone.gesturelibrary.process.OnCompleteListener;
+import com.reone.gesturelibrary.style.BaseStyle;
+import com.reone.gesturelibrary.style.Style;
 import com.reone.gesturelibrary.util.PasswordCache;
 import com.reone.gesturelibrary.view.LockView;
 import com.reone.gesturelibrary.process.SimpleProcessManager;
+import com.reone.talklibrary.TalkApp;
 
 import java.util.List;
 
@@ -57,10 +63,22 @@ public class DemoActivity extends AppCompatActivity{
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId){
                     case R.id.style_normal:
+                        TalkApp.talk("普通圆形");
+                        lockView.setStyle(Style.NORMAL);
                         break;
                     case R.id.style_rect:
+                        TalkApp.talk("方形");
+                        lockView.setStyle(Style.RECT);
                         break;
                     case R.id.style_customize:
+                        TalkApp.talk("自定义");
+                        lockView.setStyle(new BaseStyle() {
+                            @Override
+                            public boolean drawCircle(Canvas canvas, RectF oval, Paint paint) {
+                                canvas.drawArc(oval,-135f,315f,false,paint);
+                                return true;
+                            }
+                        });
                         break;
                 }
             }
